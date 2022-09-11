@@ -10,6 +10,7 @@
   "contact": {
     "sources": "https://github.com/IAFEnvoy/ThinkBeforeDrop"
   },
+  "icon": "assets/thinkbeforedrop/icon.png",
   "license": "GPL-3.0",
   "environment": "client",
   "entrypoints": {
