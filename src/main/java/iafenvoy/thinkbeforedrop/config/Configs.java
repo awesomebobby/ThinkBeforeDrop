@@ -29,21 +29,21 @@ public class Configs implements IConfigHandler {
     public final NDouble minSecond = new NDouble("minSecond", 0.5);
     public final NDouble maxSecond = new NDouble("maxSecond", 5);
     //配置表
-    public final NBoolean weapon = new NBoolean("weapon", true);//所有武器
-    public final NBoolean tool = new NBoolean("tool", true);//所有工具
-    public final NBoolean shulker_box = new NBoolean("skulker_box", true);//所有潜影盒
-    public final NBoolean armor = new NBoolean("armor", true);//所有装备
-    public final NBoolean ore = new NBoolean("ore", true);//所有矿石
-    public final NBoolean disc = new NBoolean("disc", true);//所有唱片，id中有music_disc的
-    public final NBoolean uncommon = new NBoolean("uncommon", true);//所有黄名物品
-    public final NBoolean rare = new NBoolean("rare", true);//所有蓝名物品
-    public final NBoolean epic = new NBoolean("epic", true);//所有紫名物品
-    public final NBoolean enchanted = new NBoolean("enchanted", true);//所有有附魔的物品，包括物品有的附魔（只能指令拿到的那种）
-    public final NBoolean has_nbt = new NBoolean("has_nbt", true);//所有有特殊nbt的（不包括耐久、附魔惩罚等）
-    public final NBoolean enchanted_book = new NBoolean("enchanted_book", true);//所有附魔书
-    public final NBoolean book = new NBoolean("books", true);//所有成书
-    public final NStringList customItems=new NStringList("customItems",ImmutableList.of());
-    public final NStringList excludeItems=new NStringList("excludeItems",ImmutableList.of());
+    public final NBoolean weapon = new NBoolean("weapon", false);//所有武器
+    public final NBoolean tool = new NBoolean("tool", false);//所有工具
+    public final NBoolean shulker_box = new NBoolean("skulker_box", false);//所有潜影盒
+    public final NBoolean armor = new NBoolean("armor", false);//所有装备
+    public final NBoolean ore = new NBoolean("ore", false);//所有矿石
+    public final NBoolean disc = new NBoolean("disc", false);//所有唱片
+    public final NBoolean uncommon = new NBoolean("uncommon", false);//所有黄名物品
+    public final NBoolean rare = new NBoolean("rare", false);//所有蓝名物品
+    public final NBoolean epic = new NBoolean("epic", false);//所有紫名物品
+    public final NBoolean enchanted = new NBoolean("enchanted", false);//所有有附魔的物品，包括物品有的附魔（只能指令拿到的那种）
+    public final NBoolean has_nbt = new NBoolean("has_nbt", false);//所有有特殊nbt的（不包括耐久、附魔惩罚等）
+    public final NBoolean enchanted_book = new NBoolean("enchanted_book", false);//所有附魔书
+    public final NBoolean book = new NBoolean("books", false);//所有成书
+    public final NStringList customItems=new NStringList("customItems",ImmutableList.of());//自定义
+    public final NStringList excludeItems=new NStringList("excludeItems",ImmutableList.of());//排除物品
 
     private Configs() {
         this.load();
