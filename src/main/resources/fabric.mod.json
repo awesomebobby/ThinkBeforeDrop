@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "thinkbeforedrop",
+  "version": "1.0.0",
+  "name": "Think Before Drop",
+  "description": "Press Q twice before drop specific items",
+  "authors": [
+    "IAFEnvoy"
+  ],
+  "license": "GPL-3.0",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "iafenvoy.thinkbeforedrop.ThinkBeforeDrop"
+    ],
+    "modmenu": [
+      "iafenvoy.thinkbeforedrop.compat.ModMenu"
+    ]
+  },
+  "mixins": [
+    "thinkbeforedrop.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "minecraft": "1.16.x",
+    "java": ">=8",
+    "fabric": ">=0.31.0"
+  }
+}
