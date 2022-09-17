@@ -60,9 +60,9 @@ public class DropManager {
         }
         if (Configs.INSTANCE.has_nbt.getBooleanValue()) {
             NbtCompound tag = stack.getTag();
-            assert tag != null;
-            if (tag.contains("display") || tag.getBoolean("Unbreakable") || tag.contains("CanDestroy") || tag.contains("CanPlaceOn") || tag.contains("StoredEnchantments") || tag.contains("AttributeModifiers"))
-                return true;
+            if (tag != null)
+                if (tag.contains("display") || tag.getBoolean("Unbreakable") || tag.contains("CanDestroy") || tag.contains("CanPlaceOn") || tag.contains("StoredEnchantments") || tag.contains("AttributeModifiers"))
+                    return true;
         }
         if (Configs.INSTANCE.enchanted_book.getBooleanValue())
             if (item instanceof EnchantedBookItem)
