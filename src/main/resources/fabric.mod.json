@@ -15,7 +15,7 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "iafenvoy.thinkbeforedrop.client.ThinkBeforeDropClient"
+      "iafenvoy.thinkbeforedrop.client.ThinkBeforeDrop"
     ],
     "main": [
       "iafenvoy.thinkbeforedrop.ThinkBeforeDrop"
