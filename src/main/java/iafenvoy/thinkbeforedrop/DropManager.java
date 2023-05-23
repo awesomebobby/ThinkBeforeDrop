@@ -2,14 +2,13 @@ package iafenvoy.thinkbeforedrop;
 
 import iafenvoy.thinkbeforedrop.config.Configs;
 import net.minecraft.block.Block;
-import net.minecraft.block.OreBlock;
+import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.item.*;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.registry.Registries;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Rarity;
-import net.minecraft.util.registry.Registry;
 
 public class DropManager {
     private static long lastDropTime = 0;
@@ -22,7 +21,8 @@ public class DropManager {
         Block block = null;
         if (item instanceof BlockItem)
             block = ((BlockItem) item).getBlock();
-        String name = Registry.ITEM.getId(item).getPath();
+//        String name = Registry.ITEM.getId(item).getPath();
+        String name = Registries.ITEM.getId(item).getPath();
         if (Configs.INSTANCE.excludeItems.getStrings().contains(name))
             return false;
         if (Configs.INSTANCE.weapon.getBooleanValue())
@@ -39,8 +39,10 @@ public class DropManager {
             if (item instanceof ArmorItem || item instanceof ElytraItem)
                 return true;
         if (Configs.INSTANCE.ore.getBooleanValue())
+
             if (block != null)
-                if (block instanceof OreBlock)
+//                if (block instanceof OreBlock)
+                if(block instanceof ExperienceDroppingBlock)
                     return true;
         if (Configs.INSTANCE.disc.getBooleanValue())
             if (item instanceof MusicDiscItem)
@@ -59,7 +61,8 @@ public class DropManager {
                 return true;
         }
         if (Configs.INSTANCE.has_nbt.getBooleanValue()) {
-            NbtCompound tag = stack.getTag();
+//            NbtCompound tag = stack.getTag();
+            NbtCompound tag = stack.getNbt();
             if (tag != null)
                 if (tag.contains("display") || tag.getBoolean("Unbreakable") || tag.contains("CanDestroy") || tag.contains("CanPlaceOn") || tag.contains("StoredEnchantments") || tag.contains("AttributeModifiers"))
                     return true;
@@ -92,6 +95,6 @@ public class DropManager {
     }
 
     public static Text getWarningText() {
-        return new TranslatableText("tbt.warning");
+        return Text.translatable("tbt.warning");
     }
 }
