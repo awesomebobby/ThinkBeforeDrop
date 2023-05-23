@@ -1,5 +1,6 @@
 package iafenvoy.thinkbeforedrop.config;
 
+import iafenvoy.thinkbeforedrop.ThinkBeforeDrop;
 import com.google.common.collect.ImmutableList;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -10,7 +11,6 @@ import fi.dy.masa.malilib.config.options.ConfigBoolean;
 import fi.dy.masa.malilib.config.options.ConfigDouble;
 import fi.dy.masa.malilib.config.options.ConfigStringList;
 import fi.dy.masa.malilib.util.JsonUtils;
-import iafenvoy.thinkbeforedrop.ThinkBeforeDrop;
 import net.minecraft.client.resource.language.I18n;
 
 import java.io.File;
@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Configs implements IConfigHandler {
+
     public static final Configs INSTANCE = new Configs();
     private static final String MOD_ID = ThinkBeforeDrop.MOD_ID;
     private static final String FILE_PATH = "./config/" + MOD_ID + ".json";
@@ -42,7 +43,7 @@ public class Configs implements IConfigHandler {
     public final NBoolean has_nbt = new NBoolean("has_nbt", false);//所有有特殊nbt的（不包括耐久、附魔惩罚等）
     public final NBoolean enchanted_book = new NBoolean("enchanted_book", false);//所有附魔书
     public final NBoolean book = new NBoolean("books", false);//所有成书
-    public final NStringList customItems=new NStringList("customItems",ImmutableList.of());//自定义
+    public final NStringList customItems=new NStringList("customItems", ImmutableList.of());//自定义
     public final NStringList excludeItems=new NStringList("excludeItems",ImmutableList.of());//排除物品
 
     private Configs() {
@@ -98,4 +99,5 @@ public class Configs implements IConfigHandler {
             configs.add(this);
         }
     }
+
 }
